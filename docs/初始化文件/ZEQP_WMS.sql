@@ -22,20 +22,20 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_Action`;
 CREATE TABLE `Base_Action`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `ParentId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '父级Id',
+  `ParentId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '父级Id',
   `Type` int(11) NOT NULL COMMENT '类型,菜单=0,页面=1,权限=2',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限名/菜单名',
-  `Url` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '菜单地址',
-  `Value` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限值',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '权限名/菜单名',
+  `Url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '菜单地址',
+  `Value` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '权限值',
   `NeedAction` tinyint(4) NOT NULL DEFAULT 0 COMMENT '是否需要权限(仅页面有效)',
-  `Icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
+  `Icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '图标',
   `Sort` int(11) NOT NULL DEFAULT 0 COMMENT '排序',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统权限表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统权限表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_Action
@@ -416,15 +416,15 @@ INSERT INTO `Base_Action` VALUES ('1298445852758511618', '2020-08-26 10:23:09', 
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_AppSecret`;
 CREATE TABLE `Base_AppSecret`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '自然主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '自然主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `AppId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '应用Id',
-  `AppSecret` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '应用密钥',
-  `AppName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '应用名',
+  `AppId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '应用Id',
+  `AppSecret` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '应用密钥',
+  `AppName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '应用名',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '应用密钥表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '应用密钥表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_AppSecret
@@ -437,46 +437,46 @@ INSERT INTO `Base_AppSecret` VALUES ('1173937877642383360', '2019-09-17 20:32:55
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_BuildTest`;
 CREATE TABLE `Base_BuildTest`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '自然主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '自然主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `Column1` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '列1',
-  `Column2` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '列2',
-  `Column3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '列3',
-  `Column4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '列4',
-  `Column5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '列5',
+  `Column1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '列1',
+  `Column2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '列2',
+  `Column3` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '列3',
+  `Column4` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '列4',
+  `Column5` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '列5',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '生成测试表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '生成测试表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for Base_DbLink
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_DbLink`;
 CREATE TABLE `Base_DbLink`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '自然主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '自然主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `LinkName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '连接名',
-  `ConnectionStr` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '连接字符串',
-  `DbType` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '数据库类型',
+  `LinkName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '连接名',
+  `ConnectionStr` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '连接字符串',
+  `DbType` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '数据库类型',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '数据库连接表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '数据库连接表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for Base_Department
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_Department`;
 CREATE TABLE `Base_Department`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '部门名',
-  `ParentId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '上级部门Id',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '部门名',
+  `ParentId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '上级部门Id',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '部门表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_Department
@@ -488,16 +488,16 @@ INSERT INTO `Base_Department` VALUES ('1', '2020-08-26 14:01:58', 'Admin', 0, '�
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_Enum`;
 CREATE TABLE `Base_Enum`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
-  `Code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '编号',
-  `Name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
+  `Code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '编号',
+  `Name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
   `IsSystem` tinyint(1) NULL DEFAULT NULL COMMENT '系统必须',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NULL DEFAULT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '数据字典' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '数据字典' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_Enum
@@ -525,21 +525,21 @@ INSERT INTO `Base_Enum` VALUES ('1292758803841814528', 'TrayType', '托盘类型
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_EnumItem`;
 CREATE TABLE `Base_EnumItem`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `EnumId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `EnumCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Value` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `EnumId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `EnumCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Value` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `IsSystem` tinyint(1) NOT NULL COMMENT '系统必须',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_Base_EnumItem`(`EnumId`) USING BTREE,
   CONSTRAINT `FK_Base_EnumItem` FOREIGN KEY (`EnumId`) REFERENCES `base_enum` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典值' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '字典值' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_EnumItem
@@ -621,19 +621,19 @@ INSERT INTO `Base_EnumItem` VALUES ('1293010886000119808', '1292758803841814528'
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_Parameter`;
 CREATE TABLE `Base_Parameter`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ID主键',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '参数类型',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '参数编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '参数名称',
-  `ValConfig` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '参数值配置',
-  `Val` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '参数值',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ID主键',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '参数类型',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '参数编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '参数名称',
+  `ValConfig` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '参数值配置',
+  `Val` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '参数值',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '描述',
   `IsSystem` tinyint(1) NOT NULL COMMENT '是否系统必须',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统参数表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统参数表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_Parameter
@@ -665,13 +665,13 @@ INSERT INTO `Base_Parameter` VALUES ('1282507459948187649', 'Process', 'PlanCode
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_Role`;
 CREATE TABLE `Base_Role`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `RoleName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色名',
+  `RoleName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色名',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统角色表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统角色表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_Role
@@ -683,14 +683,14 @@ INSERT INTO `Base_Role` VALUES ('1', '2020-08-26 14:01:58', NULL, 0, '超级管�
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_RoleAction`;
 CREATE TABLE `Base_RoleAction`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `RoleId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户Id',
-  `ActionId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限Id',
+  `RoleId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '用户Id',
+  `ActionId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '权限Id',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色权限表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色权限表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_RoleAction
@@ -1071,18 +1071,18 @@ INSERT INTO `Base_RoleAction` VALUES ('99', '2020-08-26 14:01:58', NULL, 0, '1',
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_User`;
 CREATE TABLE `Base_User`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `UserName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',
-  `Password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
-  `RealName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+  `UserName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '用户名',
+  `Password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `RealName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '姓名',
   `Sex` int(11) NOT NULL DEFAULT 0 COMMENT '性别(1为男，0为女)',
   `Birthday` date NULL DEFAULT NULL COMMENT '出生日期',
-  `DepartmentId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '所属部门Id',
+  `DepartmentId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '所属部门Id',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统用户表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统用户表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_User
@@ -1094,28 +1094,28 @@ INSERT INTO `Base_User` VALUES ('Admin', '2020-08-26 14:01:58', 'Admin', 0, 'Adm
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_UserLog`;
 CREATE TABLE `Base_UserLog`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '自然主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '自然主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
-  `CreatorRealName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人姓名',
-  `LogType` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '日志类型',
-  `LogContent` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '日志内容',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorRealName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人姓名',
+  `LogType` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '日志类型',
+  `LogContent` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '日志内容',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统日志表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for Base_UserRole
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_UserRole`;
 CREATE TABLE `Base_UserRole`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人Id',
   `Deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '否已删除',
-  `UserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户Id',
-  `RoleId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色Id',
+  `UserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '用户Id',
+  `RoleId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色Id',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户角色表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户角色表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_UserRole
@@ -1127,15 +1127,15 @@ INSERT INTO `Base_UserRole` VALUES ('1', '2020-08-26 14:01:58', NULL, 0, 'Admin'
 -- ----------------------------
 DROP TABLE IF EXISTS `Base_UserStor`;
 CREATE TABLE `Base_UserStor`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `UserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `UserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '用户ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
   `IsDefault` tinyint(1) NOT NULL COMMENT '是否默认仓库',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户仓库权限表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户仓库权限表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of Base_UserStor
@@ -1147,20 +1147,20 @@ INSERT INTO `Base_UserStor` VALUES ('1', '1', '1', 1, '2020-08-26 14:01:58', 'Ad
 -- ----------------------------
 DROP TABLE IF EXISTS `IT_LocalDetail`;
 CREATE TABLE `IT_LocalDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `InStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '入库ID',
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位ID',
-  `TrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘号ID',
-  `ZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `MeasureId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `InStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '入库ID',
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位ID',
+  `TrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘号ID',
+  `ZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `MeasureId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
   `InTime` datetime NOT NULL COMMENT '入库时间',
   `Amount` double NULL DEFAULT NULL COMMENT '总额',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人',
   `Price` double NULL DEFAULT NULL COMMENT '单价',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   `Num` double NOT NULL COMMENT '数量',
@@ -1179,22 +1179,22 @@ CREATE TABLE `IT_LocalDetail`  (
   CONSTRAINT `FK_IT_LocalDetail5` FOREIGN KEY (`ZoneId`) REFERENCES `pb_trayzone` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_IT_LocalDetail6` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_IT_LocalDetail7` FOREIGN KEY (`TrayId`) REFERENCES `pb_tray` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库存明细表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '库存明细表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for IT_LocalMaterial
 -- ----------------------------
 DROP TABLE IF EXISTS `IT_LocalMaterial`;
 CREATE TABLE `IT_LocalMaterial`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位ID',
-  `TrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘号ID',
-  `ZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `MeasureId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位ID',
+  `TrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘号ID',
+  `ZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `MeasureId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
   `Num` double NOT NULL COMMENT '数量',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_IT_LocalMaterial`(`MeasureId`) USING BTREE,
@@ -1209,27 +1209,27 @@ CREATE TABLE `IT_LocalMaterial`  (
   CONSTRAINT `FK_IT_LocalMaterial4` FOREIGN KEY (`ZoneId`) REFERENCES `pb_trayzone` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_IT_LocalMaterial5` FOREIGN KEY (`TrayId`) REFERENCES `pb_tray` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_IT_LocalMaterial6` FOREIGN KEY (`LocalId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库存表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '库存表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for IT_RecordBook
 -- ----------------------------
 DROP TABLE IF EXISTS `IT_RecordBook`;
 CREATE TABLE `IT_RecordBook`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '相关单号',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '台账类型\r\n            入库 出库 移库 调拨出 调拨入 报损 盘亏 盘盈',
-  `FromStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原仓库ID',
-  `FromLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原货位ID',
-  `ToStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标仓库',
-  `ToLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `MeasureId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '物料条码',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '相关单号',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '台账类型\r\n            入库 出库 移库 调拨出 调拨入 报损 盘亏 盘盈',
+  `FromStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原仓库ID',
+  `FromLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原货位ID',
+  `ToStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标仓库',
+  `ToLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `MeasureId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '物料条码',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `Num` double NOT NULL COMMENT '数量',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_IT_RecordBook`(`MeasureId`) USING BTREE,
@@ -1244,79 +1244,79 @@ CREATE TABLE `IT_RecordBook`  (
   CONSTRAINT `FK_IT_RecordBook4` FOREIGN KEY (`ToStorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_IT_RecordBook5` FOREIGN KEY (`FromStorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_IT_RecordBook6` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '台账表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '台账表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Address
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Address`;
 CREATE TABLE `PB_Address`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键ID',
-  `CusId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '客户ID',
-  `SupId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话/投料点编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系人/投料点名称',
-  `Address` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地址',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键ID',
+  `CusId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '客户ID',
+  `SupId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '电话/投料点编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '联系人/投料点名称',
+  `Address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '地址',
   `IsEnable` tinyint(1) NOT NULL COMMENT '是否启用 ',
   `IsDefault` tinyint(1) NOT NULL COMMENT '是否默认',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_Address`(`SupId`) USING BTREE,
   INDEX `FK_PB_Address2`(`CusId`) USING BTREE,
   CONSTRAINT `FK_PB_Address` FOREIGN KEY (`SupId`) REFERENCES `pb_supplier` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_Address2` FOREIGN KEY (`CusId`) REFERENCES `pb_customer` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '客户/投料点/供应商地址表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '客户/投料点/供应商地址表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_AreaMaterial
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_AreaMaterial`;
 CREATE TABLE `PB_AreaMaterial`  (
-  `AreaId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货区ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
+  `AreaId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货区ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
   PRIMARY KEY (`AreaId`, `MaterialId`) USING BTREE,
   INDEX `FK_PB_AreaMaterial2`(`MaterialId`) USING BTREE,
   CONSTRAINT `FK_PB_AreaMaterial1` FOREIGN KEY (`AreaId`) REFERENCES `pb_storarea` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_AreaMaterial2` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '货区物料关系表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '货区物料关系表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_BarCode
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_BarCode`;
 CREATE TABLE `PB_BarCode`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `BarCodeTypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '条码类型ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `BarCodeTypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '条码类型ID',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_BarCode`(`BarCodeTypeId`) USING BTREE,
   CONSTRAINT `FK_PB_BarCode` FOREIGN KEY (`BarCodeTypeId`) REFERENCES `pb_barcodetype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '条码' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '条码' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_BarCodeRule
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_BarCodeRule`;
 CREATE TABLE `PB_BarCodeRule`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `TypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '类型 常量 日期 流水号 引用 每日流水号 随机数(GUID) 参数',
-  `Sort` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '排序',
-  `Rule` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '规则',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `TypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '类型 常量 日期 流水号 引用 每日流水号 随机数(GUID) 参数',
+  `Sort` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '排序',
+  `Rule` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '规则',
   `length` int(11) NULL DEFAULT NULL COMMENT '长度',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_BarCodeRule`(`TypeId`) USING BTREE,
   CONSTRAINT `FK_PB_BarCodeRule` FOREIGN KEY (`TypeId`) REFERENCES `pb_barcodetype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '条码规则' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '条码规则' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of PB_BarCodeRule
@@ -1385,30 +1385,30 @@ INSERT INTO `PB_BarCodeRule` VALUES ('1285853106172596224', '1285847814198267904
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_BarCodeSerial`;
 CREATE TABLE `PB_BarCodeSerial`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键Id',
-  `TypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '条码类型',
-  `ParaName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '参数名称',
-  `ParaValue` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '参数值',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键Id',
+  `TypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '条码类型',
+  `ParaName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '参数名称',
+  `ParaValue` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '参数值',
   `SerialNum` int(11) NOT NULL COMMENT '流水号',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_BarCodeSerial`(`TypeId`) USING BTREE,
   CONSTRAINT `FK_PB_BarCodeSerial` FOREIGN KEY (`TypeId`) REFERENCES `pb_barcodetype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '条码参数流水' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '条码参数流水' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_BarCodeType
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_BarCodeType`;
 CREATE TABLE `PB_BarCodeType`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '编号（业务表名称）',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
-  `JoinChar` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '连接符',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '编号（业务表名称）',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `JoinChar` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '连接符',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '条码类型管理' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '条码类型管理' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of PB_BarCodeType
@@ -1442,110 +1442,110 @@ INSERT INTO `PB_BarCodeType` VALUES ('1285847814198267904', 'PD_Plan', '计划�
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Customer`;
 CREATE TABLE `PB_Customer`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '客户ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '客户编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '客户名称',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '客户类型',
-  `Phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话',
-  `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '传真',
-  `Email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Email',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '客户ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '客户编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '客户名称',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '客户类型',
+  `Phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '电话',
+  `Fax` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '传真',
+  `Email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Email',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '客户/投料点表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '客户/投料点表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Equipment
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Equipment`;
 CREATE TABLE `PB_Equipment`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
-  `EquNum` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '设备码',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `EquNum` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '设备码',
   `Status` tinyint(1) NOT NULL COMMENT '状态 0 启用 1停用',
-  `Remark` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   UNIQUE INDEX `Code`(`Code`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '设备表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '设备表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_FeedPoint
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_FeedPoint`;
 CREATE TABLE `PB_FeedPoint`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库Id',
-  `LaneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '巷道Id',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '编码',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '类型：只进/进出/只出/出回',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库Id',
+  `LaneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '巷道Id',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '编码',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '类型：只进/进出/只出/出回',
   `IsEnable` tinyint(1) NOT NULL DEFAULT 1 COMMENT '是否启用',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_FeedPoint_StorId`(`StorId`) USING BTREE,
   INDEX `FK_PB_FeedPoint_LaneId`(`LaneId`) USING BTREE,
   CONSTRAINT `FK_PB_FeedPoint_LaneId` FOREIGN KEY (`LaneId`) REFERENCES `pb_laneway` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_FeedPoint_StorId` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '进料点/出料点' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '进料点/出料点' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Laneway
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Laneway`;
 CREATE TABLE `PB_Laneway`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '仓库ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '巷道编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '巷道名称',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '仓库ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '巷道编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '巷道名称',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(4) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_Laneway`(`StorId`) USING BTREE,
   CONSTRAINT `FK_PB_Laneway` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '巷道管理' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '巷道管理' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_LocalTray
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_LocalTray`;
 CREATE TABLE `PB_LocalTray`  (
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位ID',
-  `TrayTypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘类型ID',
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位ID',
+  `TrayTypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘类型ID',
   PRIMARY KEY (`LocalId`, `TrayTypeId`) USING BTREE,
   INDEX `FK_PB_LocalTray2`(`TrayTypeId`) USING BTREE,
   CONSTRAINT `FK_PB_LocalTray1` FOREIGN KEY (`LocalId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_LocalTray2` FOREIGN KEY (`TrayTypeId`) REFERENCES `pb_traytype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '托盘类型与货位对应关系' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '托盘类型与货位对应关系' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Location
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Location`;
 CREATE TABLE `PB_Location`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位名称',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `AreaId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货区ID',
-  `LanewayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '巷道ID',
-  `RackId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '货架ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位名称',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `AreaId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货区ID',
+  `LanewayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '巷道ID',
+  `RackId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '货架ID',
   `OverVol` double NULL DEFAULT NULL COMMENT '剩余容量',
   `IsForbid` tinyint(1) NOT NULL COMMENT '是否禁用',
   `IsDefault` tinyint(1) NOT NULL COMMENT '是否默认',
   `LockType` int(11) NOT NULL DEFAULT 0 COMMENT '锁类型,0：没有锁，1：入库锁，2：出库锁',
-  `ErrorCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '故障代码',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `ErrorCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '故障代码',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_Location1`(`StorId`) USING BTREE,
@@ -1556,137 +1556,137 @@ CREATE TABLE `PB_Location`  (
   CONSTRAINT `FK_PB_Location2` FOREIGN KEY (`AreaId`) REFERENCES `pb_storarea` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_Location3` FOREIGN KEY (`LanewayId`) REFERENCES `pb_laneway` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_Location4` FOREIGN KEY (`RackId`) REFERENCES `pb_rack` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '货位管理' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '货位管理' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Material
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Material`;
 CREATE TABLE `PB_Material`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键ID',
-  `Name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料名称',
-  `Code` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料编码',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
-  `SimpleName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '物料简称',
-  `MaterialTypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料类型ID',
-  `MeasureId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
-  `Spec` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '物料规格',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键ID',
+  `Name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料名称',
+  `Code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料编码',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `SimpleName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '物料简称',
+  `MaterialTypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料类型ID',
+  `MeasureId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
+  `Spec` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '物料规格',
   `Max` double NULL DEFAULT NULL COMMENT '上限数量',
   `Min` double NULL DEFAULT NULL COMMENT '下限数量',
-  `CusId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '客户ID',
-  `SupId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '默认存储仓库',
+  `CusId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '客户ID',
+  `SupId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '默认存储仓库',
   `Price` double NULL DEFAULT NULL COMMENT '单价',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_Material`(`MeasureId`) USING BTREE,
   INDEX `FK_PB_Material2`(`MaterialTypeId`) USING BTREE,
   CONSTRAINT `FK_PB_Material` FOREIGN KEY (`MeasureId`) REFERENCES `pb_measure` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_Material2` FOREIGN KEY (`MaterialTypeId`) REFERENCES `pb_materialtype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '物料目录' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '物料目录' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_MaterialPoint
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_MaterialPoint`;
 CREATE TABLE `PB_MaterialPoint`  (
-  `PointId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '料点Id',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料Id',
+  `PointId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '料点Id',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料Id',
   PRIMARY KEY (`PointId`, `MaterialId`) USING BTREE,
   INDEX `FK_PB_MaterialPoint2`(`MaterialId`) USING BTREE,
   CONSTRAINT `FK_PB_MaterialPoint_MaterailId1` FOREIGN KEY (`PointId`) REFERENCES `pb_feedpoint` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_MaterialPoint_MaterailId2` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '进料点/出料点 与物料对应关系' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '进料点/出料点 与物料对应关系' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_MaterialType
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_MaterialType`;
 CREATE TABLE `PB_MaterialType`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料分类表ID',
-  `Name` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料分类名称',
-  `Code` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料分类编码',
-  `ParentId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '父节点物料分类ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料分类表ID',
+  `Name` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料分类名称',
+  `Code` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料分类编码',
+  `ParentId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '父节点物料分类ID',
   `IsLeaf` bit(1) NOT NULL COMMENT '是否是叶节点',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `Path` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Path` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '物料类型' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '物料类型' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Measure
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Measure`;
 CREATE TABLE `PB_Measure`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位编码',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位名称',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位编码',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位名称',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计量单位表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '计量单位表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Rack
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Rack`;
 CREATE TABLE `PB_Rack`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货架编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货架名称',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货架编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货架名称',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(4) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_Rack`(`StorId`) USING BTREE,
   CONSTRAINT `FK_PB_Rack` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '货架管理' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '货架管理' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_StorArea
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_StorArea`;
 CREATE TABLE `PB_StorArea`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货区编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货区名称',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货区类型',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货区编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货区名称',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货区类型',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_StorArea`(`StorId`) USING BTREE,
   CONSTRAINT `FK_PB_StorArea` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '货区表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '货区表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Storage
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Storage`;
 CREATE TABLE `PB_Storage`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库名称',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库类型（平库,立库）(枚举)',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库名称',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库类型（平库,立库）(枚举)',
   `IsTray` tinyint(1) NOT NULL COMMENT '是否启用托盘管理 0  禁用：1启用',
   `IsZone` tinyint(1) NOT NULL COMMENT '是否启用分区管理 0  禁用：1启用',
   `Disable` tinyint(1) NOT NULL COMMENT '启用：0  禁用：1启用',
   `IsDefault` tinyint(1) NOT NULL COMMENT '默认',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of PB_Storage
@@ -1698,143 +1698,143 @@ INSERT INTO `PB_Storage` VALUES ('1', 'CK001', '默认仓库', 'Plane', 0, 0, 1,
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Supplier`;
 CREATE TABLE `PB_Supplier`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '供应商ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '供应商编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '供应商名称',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '供应商类型',
-  `Phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话',
-  `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '传真',
-  `Email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Email',
-  `ContactName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系人',
-  `Address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地址',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '供应商ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '供应商编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '供应商名称',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '供应商类型',
+  `Phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '电话',
+  `Fax` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '传真',
+  `Email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Email',
+  `ContactName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '联系人',
+  `Address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '地址',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '供应商/下料点表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '供应商/下料点表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_Tray
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_Tray`;
 CREATE TABLE `PB_Tray`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '货位ID(空托盘出库情况)',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘名称',
-  `TrayTypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘类型ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '货位ID(空托盘出库情况)',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘名称',
+  `TrayTypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘类型ID',
   `StartTime` datetime NOT NULL COMMENT '启用日期',
   `Status` int(11) NOT NULL COMMENT '托盘状态:0启用 1停用',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_Tray`(`LocalId`) USING BTREE,
   INDEX `FK_PB_Tray2`(`TrayTypeId`) USING BTREE,
   CONSTRAINT `FK_PB_Tray` FOREIGN KEY (`LocalId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_Tray2` FOREIGN KEY (`TrayTypeId`) REFERENCES `pb_traytype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '托盘表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '托盘表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_TrayMaterial
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_TrayMaterial`;
 CREATE TABLE `PB_TrayMaterial`  (
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `TrayTypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘类型ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `TrayTypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘类型ID',
   PRIMARY KEY (`MaterialId`, `TrayTypeId`) USING BTREE,
   INDEX `FK_PB_TrayMaterial2`(`TrayTypeId`) USING BTREE,
   CONSTRAINT `FK_PB_TrayMaterial1` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_PB_TrayMaterial2` FOREIGN KEY (`TrayTypeId`) REFERENCES `pb_traytype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '托盘类型与物料对应关系' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '托盘类型与物料对应关系' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_TrayType
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_TrayType`;
 CREATE TABLE `PB_TrayType`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
   `Length` double NULL DEFAULT NULL COMMENT '长',
   `Width` double NULL DEFAULT NULL COMMENT '宽',
   `High` double NULL DEFAULT NULL COMMENT '高',
   `IsZone` tinyint(1) NULL DEFAULT NULL COMMENT '是否有分区',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '托盘类型' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '托盘类型' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PB_TrayZone
 -- ----------------------------
 DROP TABLE IF EXISTS `PB_TrayZone`;
 CREATE TABLE `PB_TrayZone`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `TrayTypeId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘类型ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘分区编号',
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '托盘分区名称',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `TrayTypeId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘类型ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘分区编号',
+  `Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '托盘分区名称',
   `X` int(11) NULL DEFAULT NULL,
   `Y` int(11) NULL DEFAULT NULL,
   `IsDefault` tinyint(1) NULL DEFAULT NULL COMMENT '是否默认托盘分区',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_PB_TrayZone`(`TrayTypeId`) USING BTREE,
   CONSTRAINT `FK_PB_TrayZone` FOREIGN KEY (`TrayTypeId`) REFERENCES `pb_traytype` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '托盘类型分区' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '托盘类型分区' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for PD_Plan
 -- ----------------------------
 DROP TABLE IF EXISTS `PD_Plan`;
 CREATE TABLE `PD_Plan`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '计划编号',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料Id',
-  `BomVerId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Bom版本',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '计划编号',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料Id',
+  `BomVerId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Bom版本',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `Num` double NOT NULL COMMENT '数量',
   `PlanDate` datetime NOT NULL COMMENT '计划日期',
   `StartDate` datetime NULL DEFAULT NULL COMMENT '计划开始日期',
   `FinishDate` datetime NULL DEFAULT NULL COMMENT '计划完成日期',
-  `UnitCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '生产单元',
+  `UnitCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '生产单元',
   `Status` int(11) NOT NULL COMMENT '状态',
-  `Remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `OrderNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单编号',
-  `RefId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '上级系统Id',
+  `Remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `OrderNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '订单编号',
+  `RefId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '上级系统Id',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计划表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '计划表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_Allocate
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_Allocate`;
 CREATE TABLE `TD_Allocate`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '调拨单号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '调拨单号',
   `AllocateTime` datetime NOT NULL COMMENT '调拨时间',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '调拨类型',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `ToStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '目标仓库ID',
-  `ToLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '调拨类型',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `ToStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '目标仓库ID',
+  `ToLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
   `Amount` double NULL DEFAULT NULL COMMENT '总额',
   `AllocateNum` double NULL DEFAULT NULL COMMENT '调拨数量',
-  `EquId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '设备ID',
+  `EquId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '设备ID',
   `Status` int(11) NOT NULL COMMENT '状态(0待审核;1审核通过;2审核失败)',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_Allocate`(`EquId`) USING BTREE,
@@ -1845,30 +1845,30 @@ CREATE TABLE `TD_Allocate`  (
   CONSTRAINT `FK_TD_Allocate2` FOREIGN KEY (`ToStorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Allocate3` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Allocate4` FOREIGN KEY (`ToLocalId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '调拨表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '调拨表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_AllocateDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_AllocateDetail`;
 CREATE TABLE `TD_AllocateDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `AllocateId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '调拨ID',
-  `FromStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '原仓库ID',
-  `FromlocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '原货位ID',
-  `FromTrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原托盘ID',
-  `FromZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原托盘分区ID',
-  `ToStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标仓库ID',
-  `ToLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `AllocateId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '调拨ID',
+  `FromStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '原仓库ID',
+  `FromlocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '原货位ID',
+  `FromTrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原托盘ID',
+  `FromZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原托盘分区ID',
+  `ToStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标仓库ID',
+  `ToLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `Price` double NOT NULL COMMENT '单价',
   `Amount` double NOT NULL COMMENT '总额',
   `LocalNum` double NOT NULL COMMENT '库存数量',
   `AllocateNum` double NOT NULL COMMENT '调拨数量',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_AllocateDetail`(`FromTrayId`) USING BTREE,
@@ -1887,58 +1887,58 @@ CREATE TABLE `TD_AllocateDetail`  (
   CONSTRAINT `FK_TD_AllocateDetail6` FOREIGN KEY (`AllocateId`) REFERENCES `td_allocate` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_AllocateDetail7` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_AllocateDetail8` FOREIGN KEY (`FromStorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '调拨明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '调拨明细' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_Bad
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_Bad`;
 CREATE TABLE `TD_Bad`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '报损单号',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报损单号',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
   `BadTime` datetime NOT NULL COMMENT '报损时间',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '报损类型(枚举)',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报损类型(枚举)',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
   `BadNum` double NOT NULL COMMENT '报损数量',
   `TotalAmt` double NULL DEFAULT NULL COMMENT '总金额',
-  `EquId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '设备ID',
+  `EquId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '设备ID',
   `Status` int(11) NOT NULL COMMENT '状态',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_Bad`(`EquId`) USING BTREE,
   INDEX `FK_TD_Bad2`(`StorId`) USING BTREE,
   CONSTRAINT `FK_TD_Bad` FOREIGN KEY (`EquId`) REFERENCES `pb_equipment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Bad2` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '报损表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '报损表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_BadDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_BadDetail`;
 CREATE TABLE `TD_BadDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ID',
-  `BadId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '报损ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `FromLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '原货位iD',
-  `TrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原托盘ID',
-  `ZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
-  `ToLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ID',
+  `BadId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报损ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `FromLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '原货位iD',
+  `TrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原托盘ID',
+  `ZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
+  `ToLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标货位ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
   `LocalNum` double NOT NULL COMMENT '库存数量',
   `BadNum` double NOT NULL COMMENT '报损数量',
   `Surplus` double NOT NULL COMMENT '残余值',
   `Price` double NOT NULL COMMENT '单价',
   `Amount` double NOT NULL COMMENT '总额',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_BadDetail`(`StorId`) USING BTREE,
@@ -1955,66 +1955,66 @@ CREATE TABLE `TD_BadDetail`  (
   CONSTRAINT `FK_TD_BadDetail5` FOREIGN KEY (`ZoneId`) REFERENCES `pb_trayzone` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_BadDetail6` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_BadDetail7` FOREIGN KEY (`TrayId`) REFERENCES `pb_tray` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '报损明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '报损明细' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_Check
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_Check`;
 CREATE TABLE `TD_Check`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '编号',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '编号',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
   `CheckTime` datetime NOT NULL COMMENT '盘点时间',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '盘点类型\r\n            整体盘点 区域盘点 特定物料盘点 随机物料盘点(百分比) ',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
-  `EquId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '设备ID',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '盘点类型\r\n            整体盘点 区域盘点 特定物料盘点 随机物料盘点(百分比) ',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `EquId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '设备ID',
   `IsComplete` tinyint(1) NULL DEFAULT NULL COMMENT '是否盘差状态(0待盘 1已盘)',
   `Status` int(11) NULL DEFAULT NULL COMMENT '状态(0待审核;1审核通过;2审核失败;3=退回)',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   `RandomPer` int(11) NULL DEFAULT NULL,
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_Check`(`StorId`) USING BTREE,
   CONSTRAINT `FK_TD_Check` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '盘点表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '盘点表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_CheckArea
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_CheckArea`;
 CREATE TABLE `TD_CheckArea`  (
-  `CherkId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StoarAreaId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `CherkId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StoarAreaId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`CherkId`, `StoarAreaId`) USING BTREE,
   INDEX `FK_Reference_119`(`StoarAreaId`) USING BTREE,
   CONSTRAINT `FK_Reference_118` FOREIGN KEY (`CherkId`) REFERENCES `td_check` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Reference_119` FOREIGN KEY (`StoarAreaId`) REFERENCES `pb_storarea` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '盘点货区关系表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '盘点货区关系表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_CheckData
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_CheckData`;
 CREATE TABLE `TD_CheckData`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ID',
-  `CheckId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '盘点ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `localId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位ID',
-  `TrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `ZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ID',
+  `CheckId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '盘点ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `localId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位ID',
+  `TrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `ZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `LocalNum` double NULL DEFAULT NULL COMMENT '库存数量',
   `CheckNum` double NULL DEFAULT NULL COMMENT '盘点数量',
   `DisNum` double NULL DEFAULT NULL COMMENT '盘差数量',
-  `CheckUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '盘点人ID',
+  `CheckUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '盘点人ID',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_CheckData`(`MaterialId`) USING BTREE,
   INDEX `FK_TD_CheckData2`(`StorId`) USING BTREE,
@@ -2028,40 +2028,40 @@ CREATE TABLE `TD_CheckData`  (
   CONSTRAINT `FK_TD_CheckData4` FOREIGN KEY (`localId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_CheckData5` FOREIGN KEY (`TrayId`) REFERENCES `pb_tray` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_CheckData6` FOREIGN KEY (`ZoneId`) REFERENCES `pb_trayzone` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '盘差表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '盘差表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_CheckMaterial
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_CheckMaterial`;
 CREATE TABLE `TD_CheckMaterial`  (
-  `CheckId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '盘点ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
+  `CheckId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '盘点ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
   PRIMARY KEY (`CheckId`, `MaterialId`) USING BTREE,
   INDEX `FK_TD_CheckMaterial`(`MaterialId`) USING BTREE,
   CONSTRAINT `FK_TD_CheckMaterial` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_CheckMaterial2` FOREIGN KEY (`CheckId`) REFERENCES `td_check` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '盘点信息表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '盘点信息表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_InStorDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_InStorDetail`;
 CREATE TABLE `TD_InStorDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `InStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '入库ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位ID',
-  `TrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘ID',
-  `ZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `InStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '入库ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位ID',
+  `TrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘ID',
+  `ZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `Price` double NOT NULL COMMENT '单价',
   `TotalAmt` double NOT NULL COMMENT '总额',
   `Num` double NOT NULL COMMENT '入库数量',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_InStorDetail`(`MaterialId`) USING BTREE,
@@ -2076,31 +2076,31 @@ CREATE TABLE `TD_InStorDetail`  (
   CONSTRAINT `FK_TD_InStorDetail4` FOREIGN KEY (`ZoneId`) REFERENCES `pb_trayzone` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_InStorDetail5` FOREIGN KEY (`TrayId`) REFERENCES `pb_tray` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_InStorDetail6` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '入库明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '入库明细' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_InStorage
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_InStorage`;
 CREATE TABLE `TD_InStorage`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `RecId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '收货ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '入库单号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `RecId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '收货ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '入库单号',
   `InStorTime` datetime NOT NULL COMMENT '入库时间',
-  `InType` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '入库类型(枚举)',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `InType` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '入库类型(枚举)',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
   `Status` int(11) NOT NULL COMMENT '状态(0待审核;1审核通过;2审核失败)',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `AddrId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标地址ID',
-  `SupId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `AddrId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标地址ID',
+  `SupId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
   `TotalNum` double NOT NULL COMMENT '入库数量',
   `TotalAmt` double NOT NULL COMMENT '总金额',
-  `EqId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '设备ID',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `EqId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '设备ID',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_InStorage`(`EqId`) USING BTREE,
@@ -2111,59 +2111,59 @@ CREATE TABLE `TD_InStorage`  (
   CONSTRAINT `FK_TD_InStorage2` FOREIGN KEY (`AddrId`) REFERENCES `pb_address` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_InStorage3` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_InStorage4` FOREIGN KEY (`SupId`) REFERENCES `pb_supplier` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '入库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '入库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_Move
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_Move`;
 CREATE TABLE `TD_Move`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '移库单号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '移库单号',
   `MoveTime` datetime NOT NULL COMMENT '移库时间',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '移库类型(枚举)',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '移库类型(枚举)',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
   `MoveNum` double(50, 0) NULL DEFAULT NULL COMMENT '数量',
   `TotalAmt` double(50, 0) NULL DEFAULT NULL COMMENT '总额',
-  `EquId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '设备ID',
+  `EquId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '设备ID',
   `Status` int(11) NOT NULL COMMENT '状态(0待审核；1审核通过；2审核失败；3待移库；4已移库',
-  `Remarks` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `Remarks` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_Move`(`EquId`) USING BTREE,
   INDEX `FK_TD_Move2`(`StorId`) USING BTREE,
   CONSTRAINT `FK_TD_Move` FOREIGN KEY (`EquId`) REFERENCES `pb_equipment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Move2` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '移库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '移库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_MoveDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_MoveDetail`;
 CREATE TABLE `TD_MoveDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `MoveId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '移库ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `FromLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '原货位ID',
-  `FromZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原托盘分区',
-  `FromTrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '原托盘ID',
-  `ToLocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '目标货位ID',
-  `ToTrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标托盘ID',
-  `ToZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标托盘分区',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `MoveId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '移库ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `FromLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '原货位ID',
+  `FromZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原托盘分区',
+  `FromTrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '原托盘ID',
+  `ToLocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '目标货位ID',
+  `ToTrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标托盘ID',
+  `ToZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标托盘分区',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `Price` double NOT NULL COMMENT '单价',
   `LocalNum` double NOT NULL COMMENT '移库数量',
   `MoveNum` double NOT NULL,
   `Amount` double NOT NULL COMMENT '总额',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_MoveDetail`(`ToZoneId`) USING BTREE,
@@ -2184,28 +2184,28 @@ CREATE TABLE `TD_MoveDetail`  (
   CONSTRAINT `FK_TD_MoveDetail7` FOREIGN KEY (`FromLocalId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_MoveDetail8` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_MoveDetail9` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '移库明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '移库明细' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_OutStorDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_OutStorDetail`;
 CREATE TABLE `TD_OutStorDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `OutStorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '出库ID',
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '货位ID',
-  `TrayId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘ID',
-  `ZoneId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
-  `BarCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '条码',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `OutStorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '出库ID',
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '货位ID',
+  `TrayId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘ID',
+  `ZoneId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '托盘分区ID',
+  `BarCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '条码',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `Price` double NULL DEFAULT NULL COMMENT '单价',
   `TotalAmt` double NULL DEFAULT NULL COMMENT '总额',
   `LocalNum` double NOT NULL COMMENT '库存',
   `OutNum` double NOT NULL COMMENT '出库数量',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_OutStorDetail`(`LocalId`) USING BTREE,
@@ -2220,31 +2220,31 @@ CREATE TABLE `TD_OutStorDetail`  (
   CONSTRAINT `FK_TD_OutStorDetail4` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_OutStorDetail5` FOREIGN KEY (`TrayId`) REFERENCES `pb_tray` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_OutStorDetail6` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '出库明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '出库明细' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_OutStorage
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_OutStorage`;
 CREATE TABLE `TD_OutStorage`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `SendId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '发货ID',
-  `StorageId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '仓库ID',
-  `Code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '出库单号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `SendId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '发货ID',
+  `StorageId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '仓库ID',
+  `Code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '出库单号',
   `OutTime` datetime NOT NULL COMMENT '出库时间',
-  `OutType` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '出库类型(枚举)',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `OutType` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '出库类型(枚举)',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
   `OutNum` double NOT NULL COMMENT '出库数量',
   `TotalAmt` double NULL DEFAULT NULL COMMENT '总金额',
-  `EquId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '设备ID',
+  `EquId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '设备ID',
   `Status` int(11) NULL DEFAULT NULL COMMENT '状态',
-  `CusId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '客户ID',
-  `AddrId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '目标地址ID',
-  `Remarks` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `CusId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '客户ID',
+  `AddrId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '目标地址ID',
+  `Remarks` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_OutStorage`(`StorageId`) USING BTREE,
@@ -2257,26 +2257,26 @@ CREATE TABLE `TD_OutStorage`  (
   CONSTRAINT `FK_TD_OutStorage3` FOREIGN KEY (`CusId`) REFERENCES `pb_customer` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_OutStorage4` FOREIGN KEY (`EquId`) REFERENCES `pb_equipment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_OutStorage5` FOREIGN KEY (`SendId`) REFERENCES `td_send` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '出库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '出库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_RecDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_RecDetail`;
 CREATE TABLE `TD_RecDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `RecId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '收货ID',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `LocaId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '库位ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `MeasureId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `RecId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '收货ID',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `LocaId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '库位ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `MeasureId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
   `Price` double NOT NULL COMMENT '单价',
   `PlanNum` double NOT NULL COMMENT '计划数量',
   `RecNum` double NOT NULL COMMENT '实收数量',
   `InNum` double NOT NULL COMMENT '入库数量',
   `Amount` double NOT NULL COMMENT '总价',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_RecDetail_StorId`(`StorId`) USING BTREE,
@@ -2289,65 +2289,65 @@ CREATE TABLE `TD_RecDetail`  (
   CONSTRAINT `FK_TD_RecDetail_MeasureId` FOREIGN KEY (`MeasureId`) REFERENCES `pb_measure` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_RecDetail_RecId` FOREIGN KEY (`RecId`) REFERENCES `td_receiving` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_RecDetail_StorId` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '收货明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '收货明细' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_Receiving
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_Receiving`;
 CREATE TABLE `TD_Receiving`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `Code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '收货单号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `Code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '收货单号',
   `OrderTime` datetime NOT NULL COMMENT '订单日期',
   `RecTime` datetime NOT NULL COMMENT '收货日期',
-  `Type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '收货类型(枚举)',
-  `RefCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号',
+  `Type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '收货类型(枚举)',
+  `RefCode` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号',
   `Status` int(11) NOT NULL COMMENT '状态(0待审核;1确认；2：取消;3审核通过;4审核失败;5部分入库；6全部入库)',
-  `SupId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
+  `SupId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '供应商ID',
   `TotalNum` double NOT NULL COMMENT '收货数量',
   `InNum` double NOT NULL COMMENT '入库数量',
   `TotalAmt` double NOT NULL COMMENT '总金额',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `ConfirmUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '确认ID',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `ConfirmUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '确认ID',
   `ConfirmTime` datetime NULL DEFAULT NULL COMMENT '确认时间',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_Receiving_StorId`(`StorId`) USING BTREE,
   INDEX `FK_TD_Receiving_SupId`(`SupId`) USING BTREE,
   CONSTRAINT `FK_TD_Receiving_StorId` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Receiving_SupId` FOREIGN KEY (`SupId`) REFERENCES `pb_supplier` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '收货表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '收货表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_Send
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_Send`;
 CREATE TABLE `TD_Send`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `Code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '发货编号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `Code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '发货编号',
   `OrderTime` datetime NOT NULL COMMENT '单据日期',
   `SendTime` datetime NOT NULL COMMENT '发货日期',
-  `Type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '发货类型',
-  `RefCode` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '关联单号/出库单号',
+  `Type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '发货类型',
+  `RefCode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '关联单号/出库单号',
   `Status` int(11) NOT NULL COMMENT '发货状态：0编制中；1确认；2审批通过；3驳回；4部分出库；5全部出库',
-  `CusId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '客户ID',
-  `AddrId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地址ID',
+  `CusId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '客户ID',
+  `AddrId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '地址ID',
   `TotalNum` double NOT NULL COMMENT '总共数量',
   `SendNum` double NOT NULL COMMENT '发货数量',
   `TotalAmt` double NOT NULL COMMENT '发货金额',
-  `Remarks` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `ConfirmUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '确认ID',
+  `Remarks` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  `ConfirmUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '确认ID',
   `ConfirmTime` datetime NULL DEFAULT NULL COMMENT '确认时间',
-  `AuditUserId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
+  `AuditUserId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核人ID',
   `AuditeTime` datetime NULL DEFAULT NULL COMMENT '审核时间',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_Send1`(`StorId`) USING BTREE,
@@ -2356,27 +2356,27 @@ CREATE TABLE `TD_Send`  (
   CONSTRAINT `FK_TD_Send1` FOREIGN KEY (`StorId`) REFERENCES `pb_storage` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Send2` FOREIGN KEY (`CusId`) REFERENCES `pb_customer` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_Send3` FOREIGN KEY (`AddrId`) REFERENCES `pb_address` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '发货表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '发货表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for TD_SendDetail
 -- ----------------------------
 DROP TABLE IF EXISTS `TD_SendDetail`;
 CREATE TABLE `TD_SendDetail`  (
-  `Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `SendId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '发货Id',
-  `StorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '仓库ID',
-  `LocalId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '货位ID',
-  `MaterialId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '物料ID',
-  `MeasureId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '单位ID',
-  `BatchNo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批次号',
+  `Id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `SendId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '发货Id',
+  `StorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '仓库ID',
+  `LocalId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '货位ID',
+  `MaterialId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物料ID',
+  `MeasureId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '单位ID',
+  `BatchNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '批次号',
   `LocalNum` double NOT NULL COMMENT '库存数量',
   `PlanNum` double NOT NULL COMMENT '出库数量',
   `SendNum` double NOT NULL COMMENT '发货数量',
   `Price` double NULL DEFAULT NULL COMMENT '单价',
   `Amount` double NULL DEFAULT NULL COMMENT '总价',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
-  `CreatorId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建人ID',
+  `CreatorId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '创建人ID',
   `Deleted` tinyint(1) NOT NULL COMMENT '删除状态：0=未删除；1＝已删除；',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `FK_TD_SendDetail`(`SendId`) USING BTREE,
@@ -2389,6 +2389,6 @@ CREATE TABLE `TD_SendDetail`  (
   CONSTRAINT `FK_TD_SendDetail3` FOREIGN KEY (`MaterialId`) REFERENCES `pb_material` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_SendDetail4` FOREIGN KEY (`MeasureId`) REFERENCES `pb_measure` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_TD_SendDetail5` FOREIGN KEY (`LocalId`) REFERENCES `pb_location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '发货明细' ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '发货明细' ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;
